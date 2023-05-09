@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "RSVP",
+    "version": "1.0.0",
+    "description": "This extension is a starting point to create a real Chrome extension",
+    "permissions": [
+        "storage"
+    ],
+    "action":{
+        "default_popup": "popup.html",
+        "default_title": "RSVP Extension",
+        "default_icon": "claw.png"
+    },
+    "options_page": "options.html",
+    "icons": {
+        "16": "claw.png",
+        "48": "claw.png",
+        "128": "claw.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "contentScript.js"
+            ]
+        }
+    ]
+}
